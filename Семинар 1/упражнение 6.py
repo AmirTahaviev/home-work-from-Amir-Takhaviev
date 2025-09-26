@@ -1,30 +1,32 @@
-f = open('ex6', 'r+')
+f = open('ex2.txt', 'r+')
 a = f.readlines()
-numbers0 =  list(map(int, a[0].split()))
-op = a[1].strip()
+n0 =  list(map(int, a[0].split()))
+sign = a[1].strip()
 
 n = int(a[2])
 
-numbers1 = [0, 0, 0]
+n1 = [0, 0, 0]
 
 for j in range(0, 3):
-    l = list(map(int, str(numbers0[j])[::1]))
+    l = list(map(int, str(n0[j])[::1]))
     for i in range(0, len(l)):
-        numbers1[j] = numbers1[j] + l[i]*n**(len(l)-1-i)
+        n1[j] = n1[j] + l[i]*n**(len(l)-1-i)
 
-def back(k):
+def t(k):
     r = []
     while k != 0:
         r.append(k % n)
         k = k // n
     return ''.join(map(str, r[::-1]))
 
-if op == '+':
-    f.write(back(numbers1[0]+numbers1[1]+numbers1[2]))
-    print(back(numbers1[0]+numbers1[1]+numbers1[2]))
-elif op == '*':
-    f.write((back(numbers1[0]*numbers1[1]*numbers1[2])))
-    print((back(numbers1[0]*numbers1[1]*numbers1[2])))
-elif op == '-':
-    f.write((back(numbers1[0] - numbers1[1] - numbers1[2])))
-    print((back(numbers1[0] - numbers1[1] - numbers1[2])))
+if sign == '+':
+    f.write(t(n1[0]+n1[1]+n1[2]))
+    print(t(n1[0]+n1[1]+n1[2]))
+elif sign == '*':
+    f.write((t(n1[0]*n1[1]*n1[2])))
+    print((t(n1[0]*n1[1]*n1[2])))
+elif sign == '-':
+    f.write((t(n1[0] - n1[1] - n1[2])))
+    print((t(n1[0] - n1[1] - n1[2])))
+
+f.close()
