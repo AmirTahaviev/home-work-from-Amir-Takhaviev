@@ -1,19 +1,19 @@
-f = open('text.rtf', 'r')
+f = open('text.txt', 'r+')
 lines = f.readlines()
-print(lines)
+
 numbers = list(map(int, lines[0].split()))
 sign = lines[1].strip()
 
 if sign == '+':
     x = sum(numbers)
-elif operation == '-':
+elif sign == '-':
     x = numbers[0] - sum(numbers[1:])
-elif operation == '*':
+elif sign == '*':
     x = 1
     for num in numbers:
         x *= num
 
-with open('text.rtf', 'w') as file:
+with open('text.txt', 'w') as file:
     file.write(str(x))
 
 f.close()
