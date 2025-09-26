@@ -1,7 +1,7 @@
-G, s = input().split()
-G = int(G)
-g_len = len(s)//G
+N, s = input().split()
+N = int(N)
+n_len = len(s)//N
 res = ''
-for i in range(0, len(s), g_len):
-    res += s[i:i+g_len][::-1]
+for i in range(0, len(s), n_len):
+    res += s[i:i+n_len][::-1]
 print(res)
