@@ -14,7 +14,6 @@ plt.plot(df['time'], df['close'], linewidth=1)
 
 plt.gca().xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d-%m-%y'))
 
-# Настройка внешнего вида
 plt.xlabel('Дата (DD-MM-YY)')
 plt.ylabel('Цена закрытия (USD)')
 plt.title('Историческая цена Bitcoin (2018-2023)')
